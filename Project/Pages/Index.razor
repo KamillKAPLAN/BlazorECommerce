@@ -50,12 +50,17 @@ Product Name : @product.Name
 <button @onclick="@Toggle">Toggle Visibility</button>
 <br />
 <br />
-<TemplatedComponent>
+<TemplatedComponent Items="products" TItem="Product">
     <Header>
         <p>
             <b>Welcome to my course!</b>
         </p>
     </Header>
+    <RepeaterItem Context="x">
+        <p><b>Name</b> : @x.Name</p>
+        <p><b>Brand</b> : @x.Brand</p>
+        <p><b>Description</b> : @x.Description</p>
+    </RepeaterItem>
     <Footer>
         <br />
         <div style="font-size: 10px">
