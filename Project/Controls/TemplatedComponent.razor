@@ -1,0 +1,12 @@
+﻿<h3>TemplatedComponent</h3>
+<p>
+    @Header
+    This is my Blazor Course. I hope it helps you understand how Blazor works.
+    <br />
+    @Footer
+</p>
+
+@code {
+    [Parameter] public RenderFragment Header { get; set; }
+    [Parameter] public RenderFragment Footer { get; set; }
+}

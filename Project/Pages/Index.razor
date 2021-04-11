@@ -48,6 +48,21 @@ Product Name : @product.Name
 <VisibilityComponent @ref="visibilityComponent"></VisibilityComponent>
 <br />
 <button @onclick="@Toggle">Toggle Visibility</button>
+<br />
+<br />
+<TemplatedComponent>
+    <Header>
+        <p>
+            <b>Welcome to my course!</b>
+        </p>
+    </Header>
+    <Footer>
+        <br />
+        <div style="font-size: 10px">
+            Feel free to leave a comment. Very much appreciated!
+        </div>
+    </Footer>
+</TemplatedComponent>
 
 @code
 {
