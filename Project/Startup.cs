@@ -1,3 +1,4 @@
+using BlazorECommerce.DependencyInjection;
 using BlazorECommerce.Stores.CounterStore;
 using eShop.DataStore.HardCoded;
 using eShop.UseCases.PluginInterfaces.DataStore;
@@ -31,6 +32,15 @@ namespace BlazorECommerce
             services.AddTransient<IViewProduct, ViewProduct>();
 
             services.AddScoped<CounterStore>();
+
+            /* Ýlk uygulama çalýþtýðýnda, Sayfa F5 yapýldýðýnda ve Componentler arasýnda deðiþim olduðunda çalýþýr. */
+            // services.AddTransient<ICustomerService, CustomerService>();
+
+            /* Ýlk uygulama çalýþtýðýnda bir kere çalýþýr. */
+            services.AddSingleton<ICustomerService, CustomerService>();
+
+            /* Ýlk uygulama çalýþtýðýnda ve Sayfa F5 yapýldýðýnda çalýþýr. */
+            // services.AddScoped<ICustomerService, CustomerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

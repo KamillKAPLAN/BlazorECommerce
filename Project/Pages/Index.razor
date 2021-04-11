@@ -1,5 +1,7 @@
 ﻿@page "/"
 
+@inject ICustomerService customerService
+
 <h3>Index Component</h3>
 <br />
 <br />
@@ -33,7 +35,7 @@ Product Name : @product.Name
     @selectedGroup
 </p>
 <p>
-    <select @bind="selectedProduct" class="form-control" >
+    <select @bind="selectedProduct" class="form-control">
         <option value="0"></option>
         @foreach (var product in products)
         {
@@ -68,6 +70,15 @@ Product Name : @product.Name
         </div>
     </Footer>
 </TemplatedComponent>
+<br />
+<br />
+<text>Guild : </text> @customerService.UId
+<br />
+<br />
+@if (customer != null)
+{
+    <text>Customer Info : </text> @customer.Name
+}
 
 @code
 {
@@ -87,5 +98,13 @@ Product Name : @product.Name
     void Toggle()
     {
         visibilityComponent.SetVisibility();
+    }
+
+    private Customer customer;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        customer = customerService.GetCustomerById(2);
     }
 }
