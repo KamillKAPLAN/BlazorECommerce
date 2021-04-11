@@ -1,0 +1,64 @@
+﻿@page "/formEx"
+
+@using System.ComponentModel.DataAnnotations
+
+<h3>FormExComponent</h3>
+
+<EditForm Model="person" OnValidSubmit="ValidFromSbmitted">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+
+    <label>
+        First Name : <br />
+        <InputText id="empFirstName" @bind-Value="@person.FirstName" class="form-control"></InputText>
+    </label>
+    <br /><br />
+    <label>
+        Last Name : <br />
+        <InputText id="empLastName" @bind-Value="@person.LastName" class="form-control"></InputText>
+    </label>
+    <br /><br />
+    <label>
+        Employee Number : <br />
+        <InputNumber id="empNumber" @bind-Value="@person.EmployeeNumber" class="form-control"></InputNumber>
+    </label>
+    <br /><br />
+    <label>
+        Email : <br />
+        <InputText id="empEmail" @bind-Value="@person.Email" class="form-control"></InputText>
+    </label>
+    <br /><br />
+    <input type="submit" value="Submit" class="form-control" />
+    <br />
+    <label class="text-success">@Message</label>
+</EditForm>
+
+@code {
+    public string Message { get; set; }
+    Person person = new Person();
+
+    private void ValidFromSbmitted()
+    {
+        Message = "Success";
+        StateHasChanged();
+    }
+
+    class Person
+    {
+        [Required]
+        [StringLength(100)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string LastName { get; set; }
+
+        [Required]
+        [Range(1, 100)]
+        public int EmployeeNumber { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+    }
+}

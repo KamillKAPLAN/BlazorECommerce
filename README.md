@@ -40,6 +40,11 @@
  - Referencing Child Components
  - RenderFragment
  - When does a component render
+   - Componentler ne zaman `Render` edilir?
+     1. Componentler oluşturulduğunda
+     2. Componentler'in olayları tetiklendiğinde
+     3. Componentler'in parametre değerleri değiştirildiğinde
+     4. Geliştiriciler Render'ı manuel olarak tetiklediğinde
  - Component Lifecycle Events
  - Forms and Validations
  - State Management with Observer Pattern 
