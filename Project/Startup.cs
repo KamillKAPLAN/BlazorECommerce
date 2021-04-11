@@ -1,3 +1,4 @@
+using BlazorECommerce.Stores.CounterStore;
 using eShop.DataStore.HardCoded;
 using eShop.UseCases.PluginInterfaces.DataStore;
 using eShop.UseCases.SearchProductScreen;
@@ -28,6 +29,8 @@ namespace BlazorECommerce
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ISearchProduct, SearchProduct>();
             services.AddTransient<IViewProduct, ViewProduct>();
+
+            services.AddScoped<CounterStore>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

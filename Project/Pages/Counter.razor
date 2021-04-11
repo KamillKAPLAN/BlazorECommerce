@@ -1,21 +1,21 @@
 ﻿@page "/counter"
 
+@inject CounterStore counterStore
+
 <h3>Counter Component</h3>
+
+<p>Current count : @counterStore.GetState().Count</p>
 <br />
 <button class="form-control btn btn-primary" @onclick="IncrementCount">Click me</button>
 <br />
 <br />
-<CascadingValue Name="Counter" Value="@currentCount">
+<CascadingValue Name="Counter" Value="@counterStore.GetState().Count">
     <TopComponent></TopComponent>
 </CascadingValue>
 
-
 @code {
-    private int currentCount = 0;
-
     private void IncrementCount()
     {
-        currentCount++;
+        counterStore.IncrementCount();
     }
-
 }
