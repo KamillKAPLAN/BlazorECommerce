@@ -51,4 +51,17 @@
 
 ## 4. Ders Video Notlarım (Dependency Injection)
 
+ - Dependency Problems 
+ - Dependency Inversion Principle
+ - Inversion of Control
+ - Dependency Injection in Razor Components
+ - Lifetime Management in Blazor Server
+ - How to choose Lifetime Management
+ - Lifetime Management in Blazor WebAssembly
+
 ## 5. Ders Video Notlarım (Build Customer Portal)
+
+ - Reorganize Projects for Clean Architecture (Temiz Mimari için Projeler Düzenleyin)
+ - 
+ - 
+
