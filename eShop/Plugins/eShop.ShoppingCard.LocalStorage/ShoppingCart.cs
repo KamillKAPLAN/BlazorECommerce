@@ -86,10 +86,12 @@ namespace eShop.ShoppingCard.LocalStorage
                 order = new Order();
                 await SetOrder(order);
             }
-
-            foreach (var item in order.LineItems)
+            if (order.LineItems != null)
             {
-                item.Product = productRepository.GetProduct(item.ProductId);
+                foreach (var item in order.LineItems)
+                {
+                    item.Product = productRepository.GetProduct(item.ProductId);
+                }
             }
 
             return order;

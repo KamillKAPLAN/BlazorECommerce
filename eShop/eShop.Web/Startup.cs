@@ -2,6 +2,7 @@ using eShop.CoreBusiness.Services;
 using eShop.DataStore.HardCoded;
 using eShop.ShoppingCard.LocalStorage;
 using eShop.StateStore.DI;
+using eShop.UseCases.OrderConfirmationScreen;
 using eShop.UseCases.PluginInterfaces.DataStore;
 using eShop.UseCases.PluginInterfaces.StateStore;
 using eShop.UseCases.PluginInterfaces.UI;
@@ -49,6 +50,7 @@ namespace eShop.Web
             services.AddTransient<IUpdateQuantityUseCase, UpdateQuantityUseCase>();
             services.AddTransient<IPlaceOrderUseCase, PlaceOrderUseCase>();
             services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IViewOrderConfirmationUseCase, ViewOrderConfirmationUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
