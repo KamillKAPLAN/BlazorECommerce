@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\eShop.CoreBusiness\eShop.CoreBusiness.csproj" />
     <ProjectReference Include="..\..\eShop.UseCases\eShop.UseCases.csproj" />
     <ProjectReference Include="..\eShop.Web.Common\eShop.Web.Common.csproj" />

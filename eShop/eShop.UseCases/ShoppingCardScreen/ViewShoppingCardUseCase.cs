@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace eShop.UseCases.ShoppingCardScreen
 {
-    public class ViewShoppingCardUseCases
+    public class ViewShoppingCardUseCase : IViewShoppingCardUseCase
     {
         private readonly IShoppingCart shoppingCard;
 
-        public ViewShoppingCardUseCases(IShoppingCart shoppingCard)
+        public ViewShoppingCardUseCase(IShoppingCart shoppingCard)
         {
             this.shoppingCard = shoppingCard;
         }
