@@ -26,5 +26,10 @@ namespace eShop.StateStore.DI
         {
             base.BoardCastStateChange();
         }
+
+        public void UpdateProductQuantity()
+        {
+            base.BoardCastStateChange();
+        }
     }
 }
