@@ -1,42 +1,72 @@
-﻿@page "/products"
+﻿@page "/"
+@page "/products"
 
 @inject ISearchProductUseCase searchProductUseCase
 
 <h3>Search Products</h3>
 <br />
 
-<SearchBarComponent OnSearch="HandleSearch" />
-
+<div class="row" style=" border: 1px solid #fdfd;">
+    <div class="col-10">
+        <SearchBarComponent OnSearch="HandleSearch" />
+    </div>
+    <div class="col-2" style="justify-content: flex-end; display: flex; align-items: center; cursor: pointer">
+        <a class="mr-2" @onclick="@(()=> { DisplayCardValue = "block"; DisplayItemValue = "none"; })">Card</a>
+        <a @onclick="@(() => { DisplayItemValue = "block"; DisplayCardValue = "none";})">Table</a>
+    </div>
+</div>
 <br />
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Brand</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (products != null && products.Count() > 0)
-        {
+@* Card Values *@
+<div style="display: @DisplayCardValue;">
+    @if (products != null && products.Count() > 0)
+    {
+        <div class="row">
             @foreach (var product in products)
             {
-                <ProductItemComponent Product="product" />
+                <ProductCardComponent Product="product"></ProductCardComponent>
             }
-        }
-        else
-        {
+        </div>
+    }
+    else
+    {
+        <text>No Product Found.</text>
+    }
+</div>
+@* ItemValues *@
+<div style="display: @DisplayItemValue;">
+    <table class="table">
+        <thead>
             <tr>
-                <td colspan="3">
-                    Cannot find products
-                </td>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Price</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @if (products != null && products.Count() > 0)
+            {
+                @foreach (var product in products)
+                {
+                    <ProductItemComponent Product="product" />
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">
+                        Cannot find products
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 @code
 {
+    public string DisplayCardValue { get; set; }
+    public string DisplayItemValue { get; set; }
+
     private IEnumerable<Product> products;
 
     protected override void OnInitialized()
