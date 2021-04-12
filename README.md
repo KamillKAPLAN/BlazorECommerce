@@ -63,5 +63,6 @@
 
  - Reorganize Projects for Clean Architecture (`Temiz Mimari için Projeler Düzenleyin`)
  - Order Entity and Business Rules
- - 
+ - Shopping Cart Abstraction
+ -
 
