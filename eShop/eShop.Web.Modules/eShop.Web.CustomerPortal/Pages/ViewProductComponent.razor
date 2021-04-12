@@ -36,7 +36,7 @@
 
     private void AddToCart()
     {
-        addProductToCartUseCase.Execute(product.Id);
+        addProductToCartUseCase.Execute(product.ProductId);
         navigationManager.NavigateTo("/");
     }
 }
