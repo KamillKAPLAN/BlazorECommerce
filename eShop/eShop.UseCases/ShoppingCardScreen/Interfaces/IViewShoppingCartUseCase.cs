@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace eShop.UseCases.ShoppingCardScreen
 {
-    public interface IViewShoppingCardUseCase
+    public interface IViewShoppingCartUseCase
     {
         Task<Order> Execute();
     }
