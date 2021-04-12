@@ -64,5 +64,27 @@
  - Reorganize Projects for Clean Architecture (`Temiz Mimari için Projeler Düzenleyin`)
  - Order Entity and Business Rules
  - Shopping Cart Abstraction
- -
+ - Add Product to Shopping Cart Use Case
+ - Implementing Shopping Cart Plugin
+ - Test Add Product to Cart Use Case
+ - Improve UI Layout
+ - View Shopping Cart Use Case
+ - View Shopping Cart Component
+ - Order Line Item Component
+ - Order Summary Component
+ - Shopping Cart State Management
+ - Shopping Cart Items Count Component
+ - Delete Product and Update Quantity Use Cases
+ - Delete and Update with Order Line Item Component
+ - Order Repository
+ - Place Order Use Case
+ - Place Order Component
+ - Order Confirmation Use Case and Screen
 
+## 6. Ders Video Notlarım (Build Admin Portal)
+ - 
+ - 
+
+## 6. Ders Video Notlarım (Add Authentication and Authorization)
+ - 
+ - 

@@ -1,3 +1,4 @@
+using eShop.CoreBusiness.Services;
 using eShop.DataStore.HardCoded;
 using eShop.ShoppingCard.LocalStorage;
 using eShop.StateStore.DI;
@@ -33,6 +34,7 @@ namespace eShop.Web
 
             /* Ilk uygulama calistiginda bir kere calisir. */
             services.AddSingleton<IProductRepository, ProductRepository>();
+            services.AddSingleton<IOrderRepository, OrderRepository>();
 
             /*Ilk uygulama calistiginda ve Sayfa F5 yapildiginda calisir. */
             services.AddScoped<IShoppingCart, ShoppingCart>();
@@ -46,6 +48,7 @@ namespace eShop.Web
             services.AddTransient<IDeleteProductUseCase, DeleteProductUseCase>();
             services.AddTransient<IUpdateQuantityUseCase, UpdateQuantityUseCase>();
             services.AddTransient<IPlaceOrderUseCase, PlaceOrderUseCase>();
+            services.AddTransient<IOrderService, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
