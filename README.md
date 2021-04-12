@@ -61,7 +61,7 @@
 
 ## 5. Ders Video Notlarım (Build Customer Portal)
 
- - Reorganize Projects for Clean Architecture (Temiz Mimari için Projeler Düzenleyin)
- - 
+ - Reorganize Projects for Clean Architecture (`Temiz Mimari için Projeler Düzenleyin`)
+ - Order Entity and Business Rules
  - 
 
